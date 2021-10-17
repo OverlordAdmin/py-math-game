@@ -31,8 +31,8 @@ def ActivateHelp():
         varEnableHelp = True;
 
 def ShowHelp():
-    varInput = input("Vil du have vist intro hjælpen? [J/N] ");
-    if(varInput == "J" or varInput == "j"):
+    varInputHelp = input("Vil du have vist intro hjælpen? [J/N] ");
+    if(varInputHelp == "J" or varInputHelp == "j"):
         GameHelp();
         
 def UserInput():
@@ -143,7 +143,7 @@ clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 try:
     ActivateProgress();
     ActivateHelp();
-    ShowHelp();
+    
     while(varRestartGame):
         varEndGame = False;
         varGuessNumber = random.randint(varStartNumber,varEndNumber)
@@ -156,6 +156,7 @@ try:
         
         if(varGameCount <= 1):
             GameIntro();
+            ShowHelp();
         else:
             GameIntroRetry();
         
